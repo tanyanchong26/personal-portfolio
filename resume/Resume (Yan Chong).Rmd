@@ -1,0 +1,64 @@
+---
+name: Tan&nbsp;
+surname: Yan Chong
+position: "Data Analyst"
+phone: +65 8399 7062
+profilepic: yanchong.jpg
+email: "tanyanchong91@gmail.com"
+github: "tanyanchong26"
+linkedin: "tan-yan-chong"
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "People always ask if I use Python or R.I prefer R in statistics, visualizations, dashboard creations and presentations. My case for Python is for machine learning, data wrangling and data scraping."
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(tidyverse)
+library(readxl)
+```
+
+# Professional Experience
+
+```{r}
+read_excel("CV.xlsx") %>%
+  detailed_entries(title,period,company,location,why)
+```
+
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Masters of Analytics", "2020-2023", "Georgia Institute of Technology", "Georgia, United States",
+  "Advanced Diploma in Data Analytics & Machine Learning", "2019-2020", "Singapore Management University", "Singapore",
+  "B.Eng (Chemical Engineering), Honours with Distinction", "2012-2017", "National University of Singapore", "Singapore"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Certification
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Tableau Desktop Certified Associate", "2019", "Tableau Software", "Singapore",
+  "Diplôme d'études en langue française DELF B2", "2015 - ", "Ministère de l'éducation nationale", "France",
+  "SAP Certified Associate - Business Process Integration with SAP ERP 6.0 EhP6", "2017 - ", "SAP", "Singapore"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Skills
+
+* R
+* Python
+* SQL (Vertica, Microsoft SQL, MySQL, PostgreSQL)
+* Tableau Desktop
+* MATLAB
+* Google Analytics
+* Power BI Desktop
+* SSIS
